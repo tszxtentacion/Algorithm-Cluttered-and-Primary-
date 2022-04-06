@@ -47,3 +47,13 @@ int main()
 //                 longs[i][j] = (longs[i-1][j] + longs[i-1][j-1]) % 1000000007;
 //         }
 // }
+
+
+int getc(int a, int b) {
+	b = min(b, a - b); 
+	long long ans = 1;
+	for (int i = 0; i < b; i++) {
+		ans = (ans * (a - i) / (i + 1)) % MOD;
+	}
+	return ans;
+}
